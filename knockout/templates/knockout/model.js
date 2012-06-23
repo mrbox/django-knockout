@@ -1,6 +1,6 @@
 
-function {{ model_name }}Model(data) {
+function {{ model_name }}(data) {
     var self = this;
-    {% for field in fields %}self.{{ field.name|safe }} = data.{{ field.name|safe }};
+    {% for field in fields %}self.{{ field.name|safe }} = ko.observable(data.{{ field.name|safe }});
     {% endfor %}
 }
